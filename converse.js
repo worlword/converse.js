@@ -163,6 +163,7 @@
         Strophe.addNamespace('ROSTERX', 'http://jabber.org/protocol/rosterx');
         Strophe.addNamespace('RSM', 'http://jabber.org/protocol/rsm');
         Strophe.addNamespace('XFORM', 'jabber:x:data');
+        Strophe.addNamespace('CONVERSEJS', 'http://conversejs.org/protocol/custom');
 
         // Add Strophe Statuses
         var i = 0;
@@ -4645,11 +4646,14 @@
                 var jid = presence.getAttribute('from'),
                     bare_jid = Strophe.getBareJidFromJid(jid),
                     resource = Strophe.getResourceFromJid(jid),
-                    chat_status = $presence.find('show').text() || 'online',
+                    chat_status = $presence.find('show').text() ||
+                                  presence_type === 'unavailable' && 'offline' ||
+                                  'online',
                     status_message = $presence.find('status'),
                     contact = this.get(bare_jid);
                 if (this.isSelf(bare_jid)) {
-                    if ((converse.connection.jid !== jid)&&(presence_type !== 'unavailable')) {
+                    if ((converse.connection.jid !== jid) ||
+                        (presence_type === 'unavailable') && $presence.has('customstatus[xmlns="'+Strophe.NS.CONVERSEJS+'"]').length) {
                         // Another resource has changed its status, we'll update ours as well.
                         converse.xmppstatus.save({'status': chat_status});
                         if (status_message.length) { converse.xmppstatus.save({'status_message': status_message.text()}); }
@@ -4682,8 +4686,7 @@
             }
         });
 
-        this.RosterGroup = Backbone.Model.extend({
-            initialize: function (attributes, options) {
+        this.RosterGroup = Backbone.Model.extend({ initialize: function (attributes, options) {
                 this.set(_.extend({
                     description: DESC_GROUP_TOGGLE,
                     state: OPENED
@@ -5261,15 +5264,15 @@
             },
 
             constructPresence: function (type, status_message) {
+                var presence;
                 if (typeof type === 'undefined') {
                     type = this.get('status') || 'online';
                 }
                 if (typeof status_message === 'undefined') {
                     status_message = this.get('status_message');
                 }
-                var presence;
                 // Most of these presence types are actually not explicitly sent,
-                // but I add all of them here fore reference and future proofing.
+                // but I add all of them here for reference and future proofing.
                 if ((type === 'unavailable') ||
                         (type === 'probe') ||
                         (type === 'error') ||
@@ -5283,6 +5286,13 @@
                     if (status_message) {
                         presence.c('show').t(type);
                     }
+                    // The user has specifically set their status to offline.
+                    // We need to make sure to indicate this, so that it
+                    // gets propagated to other connected converse.js instances
+                    // (usually other browser tabs).
+                    // XXX: The custom:status element could potentially also be
+                    // used to implement an 'invisible' state.
+                    presence.c('customstatus', {xmlns: Strophe.NS.CONVERSEJS}).t(type);
                 } else {
                     if (type === 'online') {
                         presence = $pres();
