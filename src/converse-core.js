@@ -723,7 +723,7 @@
             _converse.chatboxes.onConnected();
             _converse.populateRoster();
             _converse.registerPresenceHandler();
-            _converse.giveFeedback(__('Contacts'));
+            _converse.giveFeedback(__('Open Chat'));
             if (reconnecting) {
                 _converse.xmppstatus.sendPresence();
             } else {
