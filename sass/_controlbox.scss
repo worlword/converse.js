@@ -1,16 +1,18 @@
 #conversejs {
     #controlbox {
-        margin-right: 2*$chat-gutter;
-        @media screen and (max-width: $mobile-portrait-length) {
-            margin: 0;
-        }
-        @media screen and (max-height: $mobile-landscape-height) {
-            margin: 0;
+        width: $controlbox-width;
+        margin-right: 0;
+        height: 100vh;
+        .box-flyout {
+            box-shadow: 0 0.3em 0.8em 0.8em rgba(0, 0, 0, 0.4);
+            width: $controlbox-width;
+            bottom: 0;
+            height: 100vh;
         }
         .controlbox-head {
             background-color: $controlbox-head-color;
             border-top-left-radius: $chatbox-border-radius;
-            border-top-right-radius: $chatbox-border-radius;
+            border-top-right-radius: 0;
             @media screen and (max-height: $mobile-landscape-height) {
                 border-top-left-radius: 0;
                 border-top-right-radius: 0;
@@ -325,7 +327,7 @@
         .controlbox-pane {
             background-color: white;
             border-bottom-left-radius: $chatbox-border-radius;
-            border-bottom-right-radius: $chatbox-border-radius;
+            border-bottom-right-radius: 0;
             border: 0;
             font-size: $font-size;
             position: absolute;
