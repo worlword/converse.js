@@ -12,6 +12,7 @@ HTTPSERVE	   	?= ./node_modules/.bin/http-server
 PAPER		   	=
 PO2JSON		 	?= ./node_modules/.bin/po2json
 RJS			 	?= ./node_modules/.bin/r.js
+WEBPACK 		?= ./node_modules/.bin/webpack
 SASS			?= ./.bundle/bin/sass
 SPHINXBUILD	 	?= ./bin/sphinx-build
 SED				?= sed
@@ -173,7 +174,8 @@ BUILDS = dist/converse.js \
 		 dist/converse-no-dependencies.js
 
 dist/converse.js: transpile src locale node_modules *.js
-	$(RJS) -o src/build.js include=converse out=dist/converse.js optimize=none 
+	$(WEBPACK) src/converse.js dist/converse.js
+
 dist/converse.min.js: src locale node_modules *.js
 	$(RJS) -o src/build.js include=converse out=dist/converse.min.js
 dist/converse-esnext.js: src locale node_modules *.js transpile

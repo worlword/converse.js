@@ -79,6 +79,7 @@
     "text": "requirejs/text#2.0.15",
     "uglify-es": "^3.0.24",
     "wait-until-promise": "^1.0.0",
+    "webpack": "^3.5.5",
     "xss": "^0.3.3"
   },
   "dependencies": {}
