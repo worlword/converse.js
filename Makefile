@@ -157,14 +157,17 @@ transpile: stamp-npm src
 
 BUILDS = dist/converse.js \
 		 dist/converse.min.js \
-		 dist/converse-esnext.js \
-		 dist/converse-esnext.min.js \
 		 dist/converse-muc-embedded.js \
 		 dist/converse-muc-embedded.min.js \
 		 dist/converse-no-jquery.js \
  		 dist/converse-no-jquery.min.js \
 		 dist/converse-no-dependencies.min.js \
 		 dist/converse-no-dependencies.js
+
+# XXX: I haven't yet found a ES2015-capable uglifier for this, 
+# so disabled for now:
+# dist/converse-esnext.js \
+# dist/converse-esnext.min.js \
 
 dist/converse.js: transpile src node_modules
 	$(RJS) -o src/build.js include=converse out=dist/converse.js optimize=none 

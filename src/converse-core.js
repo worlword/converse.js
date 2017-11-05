@@ -152,13 +152,15 @@
         if (message instanceof Error) {
             message = message.stack;
         }
-        const prefix = style ? '%c' : '';
-        const logger = _.assign({
-                'debug': _.get(console, 'log') ? console.log.bind(console) : _.noop,
-                'error': _.get(console, 'log') ? console.log.bind(console) : _.noop,
-                'info': _.get(console, 'log') ? console.log.bind(console) : _.noop,
-                'warn': _.get(console, 'log') ? console.log.bind(console) : _.noop
+        const prefix = style ? '%c' : '',
+              has_log = _.get(console, 'log'),
+              logger = _.assign({
+                'debug': has_log && console.log.bind(console) || _.noop,
+                'error': has_log && console.log.bind(console) || _.noop,
+                'info': has_log && console.log.bind(console) || _.noop,
+                'warn': has_log && console.log.bind(console) || _.noop
             }, console);
+
         if (level === Strophe.LogLevel.ERROR) {
             if (_converse.debug) {
                 logger.trace(`${prefix} ${moment().format()} ERROR: ${message}`, style);
