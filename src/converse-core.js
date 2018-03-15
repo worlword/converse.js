@@ -88,6 +88,7 @@
         'converse-otr',
         'converse-ping',
         'converse-profile',
+        'converse-pubsub',
         'converse-register',
         'converse-roomslist',
         'converse-rosterview',
@@ -1544,9 +1545,11 @@
             };
             if (this.debug) {
                 this.connection.xmlInput = function (body) {
+                    console.log(body);
                     _converse.log(body.outerHTML, Strophe.LogLevel.DEBUG, 'color: darkgoldenrod');
                 };
                 this.connection.xmlOutput = function (body) {
+                    console.log(body);
                     _converse.log(body.outerHTML, Strophe.LogLevel.DEBUG, 'color: darkcyan');
                 };
             }
