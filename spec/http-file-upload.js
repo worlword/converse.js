@@ -174,10 +174,26 @@
             describe("A file upload toolbar button", function () {
 
                 it("appears in private chats", mock.initConverseWithAsync(function (done, _converse) {
-                    test_utils.createContacts(_converse, 'current');
-                    var contact_jid = mock.cur_names[2].replace(/ /g,'.').toLowerCase() + '@localhost';
-                    test_utils.openChatBoxFor(_converse, contact_jid);
-                    done();
+                    test_utils.waitUntilDiscoConfirmed(
+                        _converse, _converse.domain,
+                        [{'category': 'server', 'type':'IM'}],
+                        ['http://jabber.org/protocol/disco#items'], [], 'info').then(function () {
+
+                        test_utils.waitUntilDiscoConfirmed(_converse, _converse.domain, [], [], ['upload.localhost'], 'items').then(function () {
+                            test_utils.waitUntilDiscoConfirmed(_converse, 'upload.localhost', [], [Strophe.NS.HTTPUPLOAD], []).then(function () {
+                                test_utils.createContacts(_converse, 'current');
+                                var contact_jid = mock.cur_names[2].replace(/ /g,'.').toLowerCase() + '@localhost';
+                                test_utils.openChatBoxFor(_converse, contact_jid);
+                                var view = _converse.chatboxviews.get(contact_jid);
+                                test_utils.waitUntil(function () {
+                                    return view.el.querySelector('.upload-file');
+                                }, 150).then(function () {
+                                    expect(view.el.querySelector('.chat-toolbar .upload-file')).not.toBe(null);
+                                    done();
+                                });
+                            });
+                        });
+                    });
                 }));
 
                 it("appears in MUC chats", mock.initConverseWithAsync(function (done, _converse) {
