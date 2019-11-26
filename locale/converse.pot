@@ -1919,3 +1919,47 @@ msgstr ""
 #: dist/converse-no-dependencies.js:55061
 msgid "Re-sync your contacts"
 msgstr ""
+
+#. text that will be displayed in the drop-down-menu in the controlbox
+#: dist/converse-no-dependencies.js:29153
+msgid "Announce All"
+msgstr ""
+
+msgid "-- sent from "
+msgstr ""
+
+#. Defines the Text, that will be displayed on the button in the service_admin_chatbox
+#: dist/converse-no-dependencies.js:29163
+#: dist/converse-no-dependencies.js:29175
+#: dist/converse-no-dependencies.js:29186
+#: dist/converse-no-dependencies.js:29197
+msgid "send"
+msgstr ""
+
+#: dist/converse-no-dependencies.js:29170
+msgid "Announce Online"
+msgstr ""
+
+#: dist/converse-no-dependencies.js:29181
+msgid "Create MOTD"
+msgstr ""
+
+#: dist/converse-no-dependencies.js:29192
+msgid "Edit MOTD"
+msgstr ""
+
+#: dist/converse-no-dependencies.js:29203
+msgid "Delete MOTD"
+msgstr ""
+
+#: dist/converse-no-dependencies.js:29222
+msgid "Choose the Service-admin Function"
+msgstr ""
+
+#: dist/converse-no-dependencies.js:29223
+msgid "Announcement"
+msgstr ""
+
+#: dist/converse-no-dependencies.js:29446
+msgid "Please enter a Message."
+msgstr ""

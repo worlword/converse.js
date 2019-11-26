@@ -55,6 +55,7 @@ converse.plugins.add('converse-dragresize', {
                     (attrs) => this.set(attrs) :
                     (attrs) => this.save(attrs);
 
+                console.log("url:", this.attributes.url);
                 save({
                     'height': _converse.applyDragResistance(height, this.get('default_height')),
                     'width': _converse.applyDragResistance(width, this.get('default_width')),

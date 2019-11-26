@@ -37,7 +37,7 @@
             await u.waitUntil(() => view.renderControlBoxPane.calls.count());
 
             let IQ_stanzas = _converse.connection.IQ_stanzas;
-            await u.waitUntil(() => IQ_stanzas.length === 4);
+            await u.waitUntil(() => IQ_stanzas.length === 5);
 
             let iq = IQ_stanzas[IQ_stanzas.length-1];
             expect(Strophe.serialize(iq)).toBe(

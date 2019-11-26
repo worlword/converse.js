@@ -4,8 +4,7 @@ const prod = require("./webpack.prod.js");
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const ASSET_PATH = process.env.ASSET_PATH || '/dist/'; // eslint-disable-line no-process-env
-
+const ASSET_PATH = process.env.ASSET_PATH || '/converse.js/dist/'; // eslint-disable-line no-process-env
 module.exports = merge(prod, {
     output: {
         publicPath: ASSET_PATH,

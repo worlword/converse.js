@@ -27,19 +27,15 @@
 
     converse.initialize({
         auto_away: 300,
-        i18n: 'af',
+        i18n: 'de',
         // auto_join_rooms: [
         //     'discuss@conference.conversejs.org',
         //     'prosody@conference.prosody.im',
         //     'jdev@conference.jabber.org'
         // ],
-        websocket_url: 'wss://conversejs.org/xmpp-websocket',
-        bosh_service_url: 'https://conversejs.org/http-bind/', // Please use this connection manager only for testing purposes
+        bosh_service_url: 'http://chat.ibykus.de:5280/bosh/', // Please use this connection manager only for testing purposes
         whitelisted_plugins: ['converse-debug'],
-        view_mode: 'fullscreen',
-        notify_all_room_messages: [
-            'discuss@conference.conversejs.org'
-        ],
+        //view_mode: 'fullscreen',
         enable_smacks: true,
         muc_respect_autojoin: true,
         message_archiving: 'always',

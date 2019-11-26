@@ -2104,6 +2104,146 @@ msgstr "Resynchronisieren Sie Ihre Kontakte"
 #~ msgid "Error: the groupchat %1$s does not exist."
 #~ msgstr "Fehler: Der Gruppenchat %1$s existiert nicht."
 
+#. description, that will be displayed in the service_admin_chatbox
+#: dist/converse-no-dependencies.js:29149
+msgid ""
+"Announces a Message to all users. If a user is currently offline he will "
+"receive the message on login."
+msgstr ""
+"Senden einer Nachricht an alle Nutzer. Wenn ein Nutzer zu diesem Zeitpunkt "
+"offline ist, erhält er die Nachricht beim nächsten Login. Ist ein Nutzer mit "
+"mehreren Resourcen online, wird die Nachricht nur an die Ressource mit der "
+"höchsten Priorität gesendet."
+
+#. text that will be displayed in the drop-down-menu in the controlbox
+#: dist/converse-no-dependencies.js:29153
+msgid "Announce All"
+msgstr "Ankündigung an alle"
+
+#. A short text of the module that will be displayed in the header of the service_admin_chatbox
+#: dist/converse-no-dependencies.js:29161
+msgid "Announce Message to all Users"
+msgstr "Ankündigung an alle Nutzer"
+
+msgid "-- sent from "
+msgstr "-- gesendet von "
+
+#. Defines the Text, that will be displayed on the button in the service_admin_chatbox
+#: dist/converse-no-dependencies.js:29163
+#: dist/converse-no-dependencies.js:29175
+#: dist/converse-no-dependencies.js:29186
+#: dist/converse-no-dependencies.js:29197
+msgid "send"
+msgstr "Senden"
+
+#. defines the Placeholder-Text that will be displayed in the textare (in the service_admin_chatbox), if no text is set
+#: dist/converse-no-dependencies.js:29165
+#: dist/converse-no-dependencies.js:29176
+msgid "Please enter the announcement."
+msgstr "Bitte tragen Sie hier die Ankündigung ein."
+
+#: dist/converse-no-dependencies.js:29168
+msgid ""
+"Send a Message to all users currently online. Offline Users will not receive "
+"this message."
+msgstr ""
+"Senden einer Nachricht an alle aktuell angemeldeten Nutzer. Nutzer, welche "
+"offline sind, werden diese Nachricht nicht erhalten."
+
+#: dist/converse-no-dependencies.js:29170
+msgid "Announce Online"
+msgstr "Ankündigung an Online-Nutzer"
+
+#: dist/converse-no-dependencies.js:29174
+msgid "Announce Message to all Online Users"
+msgstr "Ankündigung an alle Nutzer, die gerade online sind."
+
+#: dist/converse-no-dependencies.js:29179
+msgid ""
+"Set the current message of the Day. If a Message of the Day exists it will "
+"be overwritten. After the Message was set/changed it will be send to all "
+"users. Every user will receive this message again upon login."
+msgstr ""
+"Die aktuelle Nachricht des Tages festlegen. Wenn bereits eine Nachricht des "
+"Tages gesetzt wurde, wird sie überschrieben. Nachdem die Nachricht vom "
+"Server geändert wurde, wird sie an alle Nutzer versendet. Jeder Nutzer "
+"erhält diese Nachricht bei der nächsten Anmeldung erneut."
+
+#: dist/converse-no-dependencies.js:29181
+msgid "Create MOTD"
+msgstr "Nachricht des Tages erfassen"
+
+#: dist/converse-no-dependencies.js:29185
+msgid "Create Message of the Day"
+msgstr "Erfassen der Nachricht des Tages"
+
+#: dist/converse-no-dependencies.js:29187
+#: dist/converse-no-dependencies.js:29198
+#: dist/converse-no-dependencies.js:29209
+msgid "There is currently no Message of the Day set."
+msgstr "Aktuell existiert keine Nachricht des Tages."
+
+#: dist/converse-no-dependencies.js:29190
+msgid ""
+"Edit the current Message of the Day. If no Message of the Day was set, this "
+"will set the Message of the Day. The Server will not re-send the changed "
+"Message of the Day. Users will see the new Message of the Day when they log "
+"in again."
+msgstr ""
+"Ändern der aktuellen Nachricht des Tages. Wenn noch keine Nachricht des "
+"Tages existiert, wird diese erfasst. Sollte bereits eine Nachricht des Tages "
+"existieren, wird der Server diese nicht erneut versenden. Nutzer werden die "
+"Nachricht des Tages sehen, wenn sie sich das nächste Mal anmelden."
+
+#: dist/converse-no-dependencies.js:29192
+msgid "Edit MOTD"
+msgstr "Nachricht des Tages bearbeiten"
+
+#: dist/converse-no-dependencies.js:29196
+msgid "Edit Message of the Day"
+msgstr "Bearbeitung der aktuellen Nachricht des Tages"
+
+#: dist/converse-no-dependencies.js:29201
+msgid "Delete the current Message of the Day."
+msgstr "Löschen der aktuellen Nachricht des Tages."
+
+#: dist/converse-no-dependencies.js:29203
+msgid "Delete MOTD"
+msgstr "Nachricht des Tages löschen"
+
+#: dist/converse-no-dependencies.js:29207
+msgid "Delete Message of the Day"
+msgstr "Löschen der Nachricht des Tages"
+
+#: dist/converse-no-dependencies.js:29208
+msgid "delete"
+msgstr "löschen"
+
+#: dist/converse-no-dependencies.js:29222
+msgid "Choose the Service-admin Function"
+msgstr "Wählen Sie die auszuführende Service-Administration-funktion."
+
+#: dist/converse-no-dependencies.js:29223
+msgid "Announcement"
+msgstr "Ankündigung"
+
+#: dist/converse-no-dependencies.js:29316
+msgid "The requested Announcement could not be fetched."
+msgstr "Die angeforderte Ankündigung könnte nicht abgefragt werden."
+
+#: dist/converse-no-dependencies.js:29383
+#, fuzzy
+msgid "Close the window"
+msgstr "Schließen"
+
+#: dist/converse-no-dependencies.js:29423
+msgid "The was an error setting the announcement."
+msgstr "Es gab einen Fehler beim Erfassen der Ankündigung."
+
+#: dist/converse-no-dependencies.js:29446
+msgid "Please enter a Message."
+msgstr "Bitten geben Sie eine Nachricht ein."
+
 #~ msgid "Destroy groupchat"
 #~ msgstr "Gruppenchat löschen"
 
